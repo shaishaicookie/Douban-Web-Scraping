@@ -1,0 +1,2 @@
+linkTitle	linkAddress
+https://write.as/vanillas/ben	https://write.as/vanillas/ben
