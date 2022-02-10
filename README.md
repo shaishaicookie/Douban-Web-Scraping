@@ -1,5 +1,5 @@
 # **豆瓣爬虫**
-## Library/Frameowrk
+## Module/Library/Frameowrk
 * [os](https://docs.python.org/3/library/os.html)
 * [time](https://docs.python.org/3/library/time.html)
 * [pandas](https://pandas.pydata.org/docs/user_guide/index.html)       
