@@ -1,11 +1,11 @@
 # **豆瓣爬虫**
-## Library/Frameowrk Used
-* os 
-* time 
-* pandas       
-* selenium   
-* requests   
-* BeautifulSoup     
+## Library/Frameowrk
+* [os](https://docs.python.org/3/library/os.html)
+* [time](https://docs.python.org/3/library/time.html)
+* [pandas](https://pandas.pydata.org/docs/user_guide/index.html)       
+* [selenium](https://selenium-python.readthedocs.io/)  
+* [requests](https://docs.python-requests.org/en/latest/)
+* [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)     
                                                                                                                                     
 ## **1. DoubanGroupMemberSpider.ipynb**
 根据豆瓣小组ID爬取所有该豆瓣小组所有成员的信息 
@@ -33,9 +33,9 @@
 * 精华帖中的图片/动图 按照出现顺序标号命名
 * 精华帖的全部信息截图
 
-通过selenium解决反爬的问题
-login可通过手动扫描二维码或者find_element_by_class_name().click来解决
-一旦登录不会出现反爬的问题
+1. 通过selenium解决反爬的问题
+2. login可通过手动扫描二维码或者find_element_by_class_name().click来解决
+3. 一旦登录不会出现反爬的问题
 
 
 ## **4. Group712168 Folder**
