@@ -7,7 +7,7 @@
 * [requests](https://docs.python-requests.org/en/latest/)
 * [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)     
                                                                                                                                     
-## **1. DoubanGroupMemberSpider.ipynb**
+## **1. DoubanGroupMemberScraper.ipynb**
 根据豆瓣小组ID爬取所有该豆瓣小组所有成员的信息 
 * 用户ID
 * 用户名
@@ -15,7 +15,7 @@
 * 地点(optional))
 
 
-## **2. DoubanPostCollector.ipynb**
+## **2. DoubanPostInfosScraper.ipynb**
 根据豆瓣小组ID爬去取所有该豆瓣小组的所有精华帖数据 （reuqest)
 * 精华帖的正文文字信息 txt
 * 精华帖的正文链接 csv txt
@@ -26,7 +26,7 @@
 数据量大的时候，使用request会触发豆瓣的反爬机制
 
 
-## **3. DoubanSpider-selenium.ipynb**
+## **3. DoubanScraper-Selenium.ipynb**
 根据豆瓣小组ID爬去取所有该豆瓣小组的所有精华帖数据 (selenium)
 * 精华帖的正文文字信息 txt
 * 精华帖的正文链接 csv txt
