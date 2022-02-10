@@ -1,5 +1,5 @@
 # **豆瓣爬虫**
-## 使用的库/框架 Library/Frameowrk Used
+## Library/Frameowrk Used
 * os 
 * time 
 * pandas       
