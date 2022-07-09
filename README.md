@@ -1,48 +1,82 @@
-# **豆瓣爬虫**
-## Module/Library/Frameowrk
+# **Douban Web Scrapyer & Mobile Automation**
+## **Why create this app ?** 
+Douban is a community website. The site provides a variety of services such as book and video recommendations, offline crosstown activities, and group topic exchanges. In this application, Selenium, BeautifulSoup are used to crawl all information of Douban group.
+
+Douban mobile APP has the feature of generating post’s long diagram. The generated post long diagram has a suitable layout for mobile reading, and contains post’s content, popular comments and QR code for accessing that post.
+
+However, this feature is not available in douban web. So the client automation tool Appium is used for this program. 
+
+
+## **Module/Library/Frameowrk**
 * [os](https://docs.python.org/3/library/os.html)
 * [time](https://docs.python.org/3/library/time.html)
 * [pandas](https://pandas.pydata.org/docs/user_guide/index.html)       
 * [selenium](https://selenium-python.readthedocs.io/)  
 * [requests](https://docs.python-requests.org/en/latest/)
-* [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)     
+* [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+* [Appium](https://appium.io/)   
                                                                                                                                     
 ## **1. DoubanGroupMemberScraper.ipynb**
-根据豆瓣小组ID爬取所有该豆瓣小组所有成员的信息 
-* 用户ID
-* 用户名
-* 用户主页URL
-* 地点(optional))
+Scrapying all group member informationi acoording to Douban Group ID
+* User's ID
+* User's Name
+* User's Home Page URL
+* User's Location 
 
 
 ## **2. DoubanPostInfosScraper.ipynb**
-根据豆瓣小组ID爬去取所有该豆瓣小组的所有精华帖数据 （reuqest)
-* 精华帖的正文文字信息 txt
-* 精华帖的正文链接 csv txt
-* 精华帖中的图片/动图 按照出现顺序标号命名
-* 精华帖的评论信息 (评论ID， 评论内容) csv txt
-* 精华帖的pdf
-
-数据量大的时候，使用request会触发豆瓣的反爬机制
+Scrapying all elite post information (request)
+* post's text conetnent (txt)
+* post's link（csv txt）
+* post's content images / gifs (named by the order in the post)
+* post's comment information (commenter‘s ID, text content)
 
 
-## **3. DoubanScraper-Selenium.ipynb**
-根据豆瓣小组ID爬去取所有该豆瓣小组的所有精华帖数据 (selenium)
-* 精华帖的正文文字信息 txt
-* 精华帖的正文链接 csv txt
-* 精华帖中的图片/动图 按照出现顺序标号命名
-* 精华帖的全部信息截图
+## **3. DoubanScraper-Selenium.ipynb**‘
+Scrapying all elite post information (selenium)
+* post's text content (txt)
+* post's links (txt)
+* post's images / gifs (named by the order in the post)
+* post's screenshot (pdf)
 
-1. 通过selenium解决反爬的问题
-2. login可通过手动扫描二维码或者find_element_by_class_name().click来解决
-3. 一旦登录不会出现反爬的问题
+1. Solve the anti-crawl problem through Selenium
+2. Login problem can be resolved by manually 
+3. scanning the QR code or find_element_by_class_name().click 
+4. There will be no anti-crawl problems once logged in
 
 
 ## **4. Group712168 Folder**
-爬取小组结果demo
-根据帖子的标题创建路径，整理爬取的数据信息
+* Demo Result 
+* Create a path according to the title of the post, collate the data information
 
 ## **5. Copyright**
-DoubanPostCollector.ipynb 中使用的代理来自快代理
+proxy usded in DoubanPostCollector.ipynb from
 > https://www.kuaidaili.com/free/
+
+
+## **6. Some Important Notes about Environment Setup (MacOS)**
+#### 1. Enviroment Setup after downloading Android Studio, JDK
+Step1: Enter the following command
+> open .bash_profile </br>
+
+Step2: Add following three commands in to bash_profile
+> export JAVA_HOME=$(/usr/libexec/java_home)
+
+> export ANDROID_HOME=${HOME}/Library/Android/sdk
+
+> export PATH="${JAVA_HOME}/bin:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${PATH}"
+
+#### 2. If uiautomatorviewer is opened and the GUI is incomplete the following problem occurs
+> https://github.com/android/android-test/issues/911
+
+> Refer to the above link for the solution, download swt.jar and copy and paste it into the path of uiautomatorviewer   </br>
+Notice：The path described in the link above may not be the path to uiautomatorviewer on your own computer，</br>
+Just add swt.jar to the x86_64 folder in your own uiautomatorviewer path, then maximize the window, then change the window size to see the phone icon recovered.
+
+> swt.jar Download links for different versions https://download.eclipse.org/eclipse/downloads/index.html </br>
+If adding the latest version still doesn't work, change to lower version and repeat the same steps</br>
+My system is macOS Monterey 12.2. 4.20 version can run successfully
+
+#### 3. How to find appPackage and appActivity
+> adb shell dumpsys window | grep -E 'mCurrentFocus' 
 
